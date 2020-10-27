@@ -6,7 +6,7 @@ import Layout from './layout';
 import SEO from './seo';
 import PostTitle from './post-title';
 import PostDate from './post-date';
-import PostFooter from './post-footer';
+import PrevNextPost from './post-prev-next';
 import PostHero from './post-hero';
 
 const Post = ({
@@ -43,7 +43,7 @@ const Post = ({
         </section>
       </article>
     </main>
-    <PostFooter {...{ previous, next }} />
+    <PrevNextPost {...{ previous, next }} />
   </Layout>
 );
 

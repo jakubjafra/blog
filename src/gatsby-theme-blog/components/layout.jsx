@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import useBlogThemeConfig from '../hooks/configOptions';
 
 import Header from './header';
+import Footer from './footer';
 
 const Layout = ({ children, ...props }) => {
   const blogThemeConfig = useBlogThemeConfig();
@@ -16,16 +17,15 @@ const Layout = ({ children, ...props }) => {
         <link rel="stylesheet" href={webfontURL} />
       </Helmet>
       <Header {...props} />
-      <div>
-        <div
-          css={css({
-            maxWidth: 'container',
-            mx: 'auto',
-          })}
-        >
-          {children}
-        </div>
+      <div
+        css={css({
+          maxWidth: 'container',
+          mx: 'auto',
+        })}
+      >
+        {children}
       </div>
+      <Footer />
     </Styled.root>
   );
 };

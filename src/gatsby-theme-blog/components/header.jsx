@@ -43,7 +43,7 @@ const Title = ({ children, location }) => {
           })}
           to={`/`}
         >
-          {children}
+          ← Posts list
         </Styled.a>
       </Styled.h3>
     );
@@ -51,28 +51,26 @@ const Title = ({ children, location }) => {
 };
 
 const Header = ({ children, title, ...props }) => (
-  <header>
+  <header
+    css={css({
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      maxWidth: `container`,
+      mx: `auto`,
+      height: 60,
+      mb: 2,
+    })}
+  >
     <div
       css={css({
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        maxWidth: `container`,
-        mx: `auto`,
-        height: 60,
-        mb: 3,
+        display: `flex`,
+        justifyContent: `space-between`,
+        alignItems: `center`,
       })}
     >
-      <div
-        css={css({
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-        })}
-      >
-        <Title {...props}>{title}</Title>
-        {children}
-      </div>
+      <Title {...props}>{title}</Title>
+      {children}
     </div>
   </header>
 );

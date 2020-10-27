@@ -2,17 +2,13 @@
 import { Link } from 'gatsby';
 import { jsx, css, Styled, Flex } from 'theme-ui';
 
-import Bio from './bio';
-
-const PostFooter = ({ previous, next }) => (
-  <footer
+const PrevNextPost = ({ previous, next }) => (
+  <div
     css={css({
-      mt: 4,
-      pt: 3,
-      pb: 3,
+      mt: 5,
+      mb: 3,
     })}
   >
-    <Bio />
     {(previous || next) && (
       <Flex
         as="ul"
@@ -39,7 +35,7 @@ const PostFooter = ({ previous, next }) => (
         </li>
       </Flex>
     )}
-  </footer>
+  </div>
 );
 
-export default PostFooter;
+export default PrevNextPost;
