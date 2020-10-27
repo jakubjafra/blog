@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { jsx, Styled, css, Flex } from 'theme-ui';
+import { jsx, css, Flex } from 'theme-ui';
 
 import BioContent from './bio-content';
 
@@ -56,9 +56,7 @@ const Bio = () => {
           role="presentation"
         />
       )}
-      <Styled.div>
-        <BioContent />
-      </Styled.div>
+      <BioContent />
     </Flex>
   );
 };
