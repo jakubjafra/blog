@@ -1,5 +1,5 @@
-import React from 'react';
-import { css, Styled } from 'theme-ui';
+/** @jsx jsx */
+import { css, Styled, jsx } from 'theme-ui';
 import Helmet from 'react-helmet';
 
 import useBlogThemeConfig from '../hooks/configOptions';
@@ -21,8 +21,6 @@ const Layout = ({ children, ...props }) => {
           css={css({
             maxWidth: `container`,
             mx: `auto`,
-            px: 3,
-            py: 4,
           })}
         >
           {children}

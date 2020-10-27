@@ -1,6 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
 import { Link } from 'gatsby';
-import { css, Styled } from 'theme-ui';
+import { css, Styled, jsx } from 'theme-ui';
 
 const rootPath = `${__PATH_PREFIX__}/`;
 
@@ -54,10 +54,13 @@ const Header = ({ children, title, ...props }) => (
   <header>
     <div
       css={css({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
         maxWidth: `container`,
         mx: `auto`,
-        px: 3,
-        pt: 4,
+        height: 60,
+        mb: 3,
       })}
     >
       <div

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Styled } from 'theme-ui';
+/** @jsx jsx */
+import { Styled, jsx } from 'theme-ui';
 
 export default function Bio() {
   return (
