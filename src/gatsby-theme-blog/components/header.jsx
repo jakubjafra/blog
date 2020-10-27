@@ -58,6 +58,7 @@ const Header = ({ children, title, ...props }) => (
       justifyContent: 'flex-start',
       maxWidth: `container`,
       mx: `auto`,
+      px: 2,
       height: 60,
       mb: 2,
     })}

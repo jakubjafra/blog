@@ -8,6 +8,7 @@ const Footer = () => (
     css={css({
       maxWidth: 'container',
       mx: 'auto',
+      px: 2,
       mt: 5,
       mb: 3,
     })}
