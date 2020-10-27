@@ -10,6 +10,7 @@ const PostHero = ({ post }) => (
         fluid={post.image.childImageSharp.fluid}
         alt={post.imageAlt ? post.imageAlt : post.excerpt}
         sx={{
+          mt: 2,
           mb: 2,
         }}
       />

@@ -19,8 +19,8 @@ const Layout = ({ children, ...props }) => {
       <div>
         <div
           css={css({
-            maxWidth: `container`,
-            mx: `auto`,
+            maxWidth: 'container',
+            mx: 'auto',
           })}
         >
           {children}

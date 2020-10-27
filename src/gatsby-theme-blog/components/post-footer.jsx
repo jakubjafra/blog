@@ -9,6 +9,7 @@ const PostFooter = ({ previous, next }) => (
     css={css({
       mt: 4,
       pt: 3,
+      pb: 3,
     })}
   >
     <Bio />
