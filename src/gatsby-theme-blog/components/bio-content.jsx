@@ -42,10 +42,11 @@ export default function Bio() {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
       }}
     >
-      <div>{description}</div>
-      <div>
+      <div sx={{ flex: 1 }}>{description}</div>
+      <div sx={{ flex: 1, textAlign: 'right' }}>
         {social
           ? social.map(({ url, name }) => {
               const Icon = iconComponents[name];

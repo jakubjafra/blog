@@ -2,6 +2,8 @@
 import { Styled, jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 
+import PostDate from './post-date';
+
 const PostLink = ({ title, slug, date, excerpt }) => (
   <Styled.div
     as="article"
@@ -29,7 +31,7 @@ const PostLink = ({ title, slug, date, excerpt }) => (
           {title || slug}
         </Styled.a>
       </Styled.h2>
-      <small>{date}</small>
+      <PostDate>{date}</PostDate>
     </header>
     <section>
       <Styled.p>{excerpt}</Styled.p>
