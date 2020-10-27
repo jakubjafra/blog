@@ -1,18 +1,12 @@
-import React from "react"
-import { Styled } from "theme-ui"
-
-/**
- * Change the content to add your own bio
- */
+import React from 'react';
+import { Styled } from 'theme-ui';
 
 export default function Bio() {
   return (
-    <>
+    <div>
       This is where <Styled.a href="http://example.com/">your name</Styled.a>
       {` `}
       goes.
-      <br />
-      Or whatever, you make the rules.
-    </>
-  )
+    </div>
+  );
 }
