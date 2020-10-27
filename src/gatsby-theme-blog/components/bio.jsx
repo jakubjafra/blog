@@ -12,7 +12,7 @@ const bioQuery = graphql`
         author
       }
     }
-    avatar: file(absolutePath: { regex: "/avatar.(jpeg|jpg|gif|png)/" }) {
+    avatar: file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fixed(width: 48, height: 48) {
           ...GatsbyImageSharpFixed
@@ -40,8 +40,10 @@ const Bio = () => {
             mr: 2,
             mb: 0,
             width: 48,
+            height: 48,
             minWidth: 48,
             borderRadius: 99999,
+            opacity: 1,
           })}
         />
       ) : (

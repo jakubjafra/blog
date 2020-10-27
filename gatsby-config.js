@@ -1,4 +1,4 @@
-const SITE_URL = 'https://jakubjafra.com/'; // TODO
+const SITE_URL = 'https://jakubjafra.github.io/';
 
 module.exports = {
   siteMetadata: {
@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-theme-blog',
+      resolve: `gatsby-theme-blog`,
       options: {},
     },
     'gatsby-plugin-mailgo',
