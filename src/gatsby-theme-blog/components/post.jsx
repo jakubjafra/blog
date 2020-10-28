@@ -19,32 +19,36 @@ const Post = ({
   location,
   previous,
   next,
-}) => (
-  <Layout location={location} title={title}>
-    <SEO
-      title={post.title}
-      description={post.excerpt}
-      imageSource={
-        post.socialImage
-          ? post.socialImage?.childImageSharp?.fluid.src
-          : post.image?.childImageSharp?.fluid.src
-      }
-      imageAlt={post.imageAlt}
-    />
-    <main>
-      <article>
-        <header>
-          <PostTitle>{post.title}</PostTitle>
-          <PostDate>{post.date}</PostDate>
-          <PostHero post={post} />
-        </header>
-        <section>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </section>
-      </article>
-    </main>
-    <PrevNextPost {...{ previous, next }} />
-  </Layout>
-);
+}) => {
+  // TODO: Use post.tags somehow
+
+  return (
+    <Layout location={location} title={title}>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        imageSource={
+          post.socialImage
+            ? post.socialImage?.childImageSharp?.fluid.src
+            : post.image?.childImageSharp?.fluid.src
+        }
+        imageAlt={post.imageAlt}
+      />
+      <main>
+        <article>
+          <header>
+            <PostTitle>{post.title}</PostTitle>
+            <PostDate>{post.date}</PostDate>
+            <PostHero post={post} />
+          </header>
+          <section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
+        </article>
+      </main>
+      <PrevNextPost {...{ previous, next }} />
+    </Layout>
+  );
+};
 
 export default Post;

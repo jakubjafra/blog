@@ -4,39 +4,43 @@ import { Link } from 'gatsby';
 
 import PostDate from './post-date';
 
-const PostLink = ({ title, slug, date, excerpt }) => (
-  <Styled.div
-    as="article"
-    sx={{
-      mb: 4,
-    }}
-  >
-    <header>
-      <Styled.h2
-        sx={{
-          m: 0,
-          mb: 1,
-        }}
-      >
-        <Styled.a
-          as={Link}
-          to={slug}
+const PostLink = ({ title, slug, date, excerpt }) => {
+  // TODO: Use tags somehow
+
+  return (
+    <Styled.div
+      as="article"
+      sx={{
+        mb: 4,
+      }}
+    >
+      <header>
+        <Styled.h2
           sx={{
-            textDecoration: 'none',
-            '&:hover': {
-              textDecoration: 'underline',
-            },
+            m: 0,
+            mb: 1,
           }}
         >
-          {title || slug}
-        </Styled.a>
-      </Styled.h2>
-      <PostDate>{date}</PostDate>
-    </header>
-    <section>
-      <Styled.p>{excerpt}</Styled.p>
-    </section>
-  </Styled.div>
-);
+          <Styled.a
+            as={Link}
+            to={slug}
+            sx={{
+              textDecoration: 'none',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            {title || slug}
+          </Styled.a>
+        </Styled.h2>
+        <PostDate>{date}</PostDate>
+      </header>
+      <section>
+        <Styled.p>{excerpt}</Styled.p>
+      </section>
+    </Styled.div>
+  );
+};
 
 export default PostLink;

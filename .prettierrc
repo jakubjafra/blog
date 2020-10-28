@@ -5,5 +5,6 @@
   "arrowParens": "always",
   "semi": true,
   "endOfLine": "lf",
+  "proseWrap": "always",
   "singleQuote": true
 }

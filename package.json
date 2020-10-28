@@ -5,11 +5,11 @@
   "homepage": ".",
   "scripts": {
     "precommit": "lint-staged",
-    "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "rm -rf ./public && rm -rf ./.cache && gatsby build",
+    "build": "rm -rf ./public ./.cache && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "preview": "npm run build && npm run serve",
     "deploy": "npm run build && gh-pages -d public -b master -r git@github.com:jakubjafra/jakubjafra.github.io.git"
   },
   "license": "UNLICENSED",

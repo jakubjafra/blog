@@ -7,6 +7,12 @@ export default {
     primary: darkBlue,
   },
   styles: {
+    p: {
+      lineHeight: 1.5,
+    },
+    code: {
+      fontSize: '0.8em',
+    },
     a: {
       textDecoration: 'none',
       '&:hover': {
