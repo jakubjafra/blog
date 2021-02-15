@@ -1,0 +1,86 @@
+---
+title: Reusing custom Material UI components using Lerna and Gatsby
+date: 2021-02-15
+tags:
+  - gatsby
+  - material-ui
+  - lerna
+  - monorepo
+---
+
+In my latest project, I'm using monorepo structure using lerna. I'm sharing some common components
+between two different frontend projects. One of them is a Gatsby project that is causing the
+problem. The project's structure looks like this:
+
+```bash
+.
+├── packages
+│   ├── admin # CRA based project
+│   │   └── package.json
+│   ├── frontend # Gatsby based project
+│   │   └── package.json
+│   └── ui # common UI elements
+|       └── package.json
+├── lerna.json
+└── package.json
+```
+
+At a root level, I'm installing common dependencies for the project. Those are packages like
+`react`, `react-dom` and `@material-ui/core`. It's a common practice for lerna projects: you only
+need to install those once, saving your time while reinstalling dependencies.
+
+## The problem
+
+My `frontend` package is the one using `gatsby` and local `ui` package. When trying to run the
+project via `gatsby develop` while importing some components from `ui` I got a blank gatsby page and
+errors like these in the console:
+
+```js
+Uncaught Error: Unable to find node on an unmounted component.
+// or:
+Uncaught Error: Invariant Violation
+```
+
+I've found out that despite not having `react` in `frontend`'s package.json it was found in
+`packages/frontend/node_modules`! Based on `package-lock.json`, it turned out it was required by
+`gatsby`. The errors I got were caused by two different React instances being present on a live
+site: one from Gatsby, and the other one from my ui components. I needed to find a way to have only
+one `react` in my project - despite Gatsby's
+[`peerDependencies` requirements](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/package.json):
+
+```json
+"peerDependencies": {
+  "react": "^16.4.2 || ^17.0.0",
+  "react-dom": "^16.4.2 || ^17.0.0"
+},
+```
+
+## The solution
+
+I didn't exactly found a solution not to install React with Gatsby. I did, however, found a good
+enough workaround.
+
+It turns out that `npm` follows symlinks while resolving dependencies. There is a small utility
+package called [`npm-link-shared`](https://www.npmjs.com/package/npm-link-shared) that does exactly
+that. I could overwrite the forcefully-installed React with this command:
+
+```bash
+npm-link-shared ../../node_modules . react react-dom
+```
+
+This solution worked, but could be improved. In `frontend/package.json` I've added this code:
+
+```json
+"scripts": {
+  "preinstall": "rm -rf ./node_modules",
+  "postinstall": "npm-link-shared ../../node_modules . react react-dom"
+}
+```
+
+The `postinstall` script ensures that dependencies will be linked after each `npm install` call.
+
+The `preinstall` script ensures a clean installation. I was getting some errors related to a
+presence of symlinks that `npm` was not expecting.
+
+This solution was tested on `npm@6` and is in use in production. It wouldn't work with
+`react-native` thought, as it doesn't follow symlinks when building the application.

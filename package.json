@@ -14,20 +14,20 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "date-fns": "^2.16.1",
-    "gatsby": "^2.24.87",
-    "gatsby-plugin-mailgo": "^0.10.4",
-    "gatsby-theme-blog": "2.0.2",
+    "date-fns": "^2.17.0",
+    "gatsby": "^2.32.3",
+    "gatsby-plugin-mailgo": "^0.11.3",
+    "gatsby-theme-blog": "2.0.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "theme-ui": "0.4.0-alpha.3"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
-    "husky": "^4.2.5",
-    "jest": "^26.4.1",
-    "lint-staged": "^10.1.7",
-    "prettier": "^2.0.5",
+    "husky": "^5.0.9",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "shell-quote": "^1.7.2"
   }
 }
