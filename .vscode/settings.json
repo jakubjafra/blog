@@ -1,7 +1,4 @@
 {
-  "grammarly.userWords": [
-    "Coloniae",
-    "lerna",
-    "monorepo"
-  ]
+  "stylelint.enable": false,
+  "grammarly.userWords": ["Coloniae", "lerna", "monorepo"]
 }

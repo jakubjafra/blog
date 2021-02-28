@@ -27,5 +27,11 @@ module.exports = {
       options: {},
     },
     'gatsby-plugin-mailgo',
+    {
+      resolve: 'gatsby-remark-embed-gist',
+      options: {
+        username: 'jakubjafra',
+      },
+    },
   ],
 };

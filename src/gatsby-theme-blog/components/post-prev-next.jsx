@@ -19,14 +19,14 @@ const PrevNextPost = ({ previous, next }) => (
           padding: 0,
         })}
       >
-        <li>
+        <li css={css({ flex: 1 })}>
           {previous && (
             <Styled.a as={Link} to={previous.slug} rel="prev">
               ← {previous.title}
             </Styled.a>
           )}
         </li>
-        <li>
+        <li css={css({ flex: 1 })}>
           {next && (
             <Styled.a as={Link} to={next.slug} rel="next">
               {next.title} →
