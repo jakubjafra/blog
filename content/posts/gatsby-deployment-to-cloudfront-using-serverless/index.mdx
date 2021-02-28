@@ -10,10 +10,10 @@ tags:
 
 Deploying a static Gatsby site to CloudFront can be challenging. There is an excellent
 `gatsby-plugin-s3` (which I'll be using) with a terrible documentation piece around deploying to
-CloudFront. And when trying to add `serverless` in the mix, it took me quite some time to get it all
-working.
+CloudFront. And when I tried to add `serverless`'s deployments to the mix, it took me some time to
+get it all working.
 
-I wanted to deploy my static site to AWS using serverless because:
+I wanted to deploy my static site to AWS using Serverless framework because:
 
 - it enables reliable infrastructure management (no dangling resources, easy cleanup, nearly no
   manual work)
@@ -24,7 +24,7 @@ I wanted to deploy my static site to AWS using serverless because:
 
 # Prerequisites
 
-Install these required dependencies in your project:
+Install these required dependencies to your Gatsby project:
 
 ```bash
 npm install gatsby-plugin-s3 gatsby-plugin-canonical-urls
